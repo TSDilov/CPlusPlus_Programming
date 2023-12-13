@@ -7,7 +7,7 @@ int main(){
     int size;
     std::cin >> size;
 
-    int* dynamicArray = new int(size);
+    int* dynamicArray = new int[size];
 
     std::cout << "Enter " << size << " integers:" << std::endl;
 
