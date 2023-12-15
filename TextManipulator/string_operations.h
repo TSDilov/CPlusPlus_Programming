@@ -13,4 +13,6 @@ int countWords(const std::string& input);
 
 bool areAnagrams(const std::string& str1, const std::string& str2);
 
+std::string removeDuplicates(const std::string& input);
+
 #endif

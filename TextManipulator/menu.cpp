@@ -13,9 +13,10 @@ void displayMenu() {
         std::cout << "3. Count Vowels" << std::endl;
         std::cout << "4. Count Words" << std::endl;
         std::cout << "5. Check Anagrams" << std::endl;
+        std::cout << "6. Remove Duplicates" << std::endl;
         std::cout << "0. Exit" << std::endl;
 
-        std::cout << "Enter your choice (0-5): ";
+        std::cout << "Enter your choice (0-6): ";
         std::cin >> choice;
 
         std::cin.ignore();
@@ -67,6 +68,13 @@ void displayMenu() {
                 } else {
                     std::cout << "The strings are not anagrams." << std::endl;
                 }
+                break;
+            }
+            case 6: {
+                // Remove duplicates
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, userInput);
+                std::cout << "String after removing duplicates: " << removeDuplicates(userInput) << std::endl;
                 break;
             }
             default:

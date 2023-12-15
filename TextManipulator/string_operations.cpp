@@ -1,8 +1,9 @@
 #include "string_operations.h"
 #include <algorithm>
 #include <sstream>
+#include <unordered_set>
 
-std::string reverseSentence(const std::string& input){
+std::string reverseSentence(const std::string& input) {
     std::string reversedSentence = input;
     std::reverse(reversedSentence.begin(), reversedSentence.end());
     return reversedSentence;
@@ -32,7 +33,7 @@ int countWords(const std::string& input) {
     return wordCount;
 }
 
-bool areAnagrams(const std::string& str1, const std::string& str2){
+bool areAnagrams(const std::string& str1, const std::string& str2) {
     if (str1.length() != str2.length()) {
         return false;
     }
@@ -44,4 +45,19 @@ bool areAnagrams(const std::string& str1, const std::string& str2){
     std::sort(sortedStr2.begin(), sortedStr2.end());
 
     return sortedStr1 == sortedStr2;
+}
+
+std::string removeDuplicates(const std::string& input) {
+    std::string result;
+    std::unordered_set<char> seenChars;
+
+    for (char ch : input) {
+        if (seenChars.find(ch) == seenChars.end())
+        {
+            result += ch;
+            seenChars.insert(ch);
+        }      
+    }
+
+    return result;
 }
