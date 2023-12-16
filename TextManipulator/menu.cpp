@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "string_operations.h"
+#include "encryption_operations.h"
 
 void displayMenu() {
     int choice;
@@ -14,9 +15,10 @@ void displayMenu() {
         std::cout << "4. Count Words" << std::endl;
         std::cout << "5. Check Anagrams" << std::endl;
         std::cout << "6. Remove Duplicates" << std::endl;
+        std::cout << "7. Encrypt/Decrypt" << std::endl;
         std::cout << "0. Exit" << std::endl;
 
-        std::cout << "Enter your choice (0-6): ";
+        std::cout << "Enter your choice (0-7): ";
         std::cin >> choice;
 
         std::cin.ignore();
@@ -75,6 +77,24 @@ void displayMenu() {
                 std::cout << "Enter a string: ";
                 std::getline(std::cin, userInput);
                 std::cout << "String after removing duplicates: " << removeDuplicates(userInput) << std::endl;
+                break;
+            }
+            case 7: {
+                // Encrypt/Decrypt
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, userInput);
+
+                int shift;
+                std::cout << "Enter the shift value: ";
+                std::cin >> shift;
+
+                std::cin.ignore();
+
+                std::string encrypted = encrypt(userInput, shift);
+                std::string decrypted = decrypt(encrypted, shift);
+
+                std::cout << "Encrypted: " << encrypted << std::endl;
+                std::cout << "Decrypted: " << decrypted << std::endl;
                 break;
             }
             default:

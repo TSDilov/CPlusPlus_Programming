@@ -51,6 +51,10 @@
         "algorithm": "cpp",
         "optional": "cpp",
         "sstream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp"
     }
 }
