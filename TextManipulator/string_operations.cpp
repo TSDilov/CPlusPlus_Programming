@@ -61,3 +61,23 @@ std::string removeDuplicates(const std::string& input) {
 
     return result;
 }
+
+bool isPalindrome(const std::string& input){
+    std::string cleandStr;
+    for (auto ch : input) {
+        if (std::isalnum(ch))
+        {
+            cleandStr += std::tolower(ch);
+        }      
+    }
+
+    size_t length = cleandStr.length();
+    for (size_t i = 0; i < length / 2; ++i) {
+        if (cleandStr[i] != cleandStr[length - 1 - i])
+        {
+            return false;
+        }     
+    }
+
+    return true;
+}

@@ -16,9 +16,10 @@ void displayMenu() {
         std::cout << "5. Check Anagrams" << std::endl;
         std::cout << "6. Remove Duplicates" << std::endl;
         std::cout << "7. Encrypt/Decrypt" << std::endl;
+        std::cout << "8. Check Polindrome" << std::endl;
         std::cout << "0. Exit" << std::endl;
 
-        std::cout << "Enter your choice (0-7): ";
+        std::cout << "Enter your choice (0-8): ";
         std::cin >> choice;
 
         std::cin.ignore();
@@ -95,6 +96,19 @@ void displayMenu() {
 
                 std::cout << "Encrypted: " << encrypted << std::endl;
                 std::cout << "Decrypted: " << decrypted << std::endl;
+                break;
+            }
+            case 8: {
+                // Check if a string is polindrome
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, userInput);
+                std::string str = userInput;
+
+                if (isPalindrome(str)) {
+                    std::cout << "The string is polindrome." << std::endl;
+                } else {
+                    std::cout << "The string is not polindrome." << std::endl;
+                }
                 break;
             }
             default:
