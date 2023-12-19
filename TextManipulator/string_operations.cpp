@@ -73,11 +73,19 @@ bool isPalindrome(const std::string& input){
 
     size_t length = cleandStr.length();
     for (size_t i = 0; i < length / 2; ++i) {
-        if (cleandStr[i] != cleandStr[length - 1 - i])
-        {
+        if (cleandStr[i] != cleandStr[length - 1 - i]) {
             return false;
         }     
     }
 
     return true;
+}
+
+size_t findSubstring(const std::string& str, const std::string& substr) {
+    size_t startingIndex = str.find(substr);
+    if (startingIndex != std::string::npos) {
+        return startingIndex;
+    }
+
+    return std::string::npos;  
 }

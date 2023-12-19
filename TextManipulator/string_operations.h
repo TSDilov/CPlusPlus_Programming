@@ -17,4 +17,6 @@ std::string removeDuplicates(const std::string& input);
 
 bool isPalindrome(const std::string& str);
 
+size_t findSubstring(const std::string& str, const std::string& substr);
+
 #endif

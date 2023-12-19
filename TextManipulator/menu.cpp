@@ -17,9 +17,10 @@ void displayMenu() {
         std::cout << "6. Remove Duplicates" << std::endl;
         std::cout << "7. Encrypt/Decrypt" << std::endl;
         std::cout << "8. Check Polindrome" << std::endl;
+        std::cout << "9. Find for substring" << std::endl;
         std::cout << "0. Exit" << std::endl;
 
-        std::cout << "Enter your choice (0-8): ";
+        std::cout << "Enter your choice (0-9): ";
         std::cin >> choice;
 
         std::cin.ignore();
@@ -108,6 +109,24 @@ void displayMenu() {
                     std::cout << "The string is polindrome." << std::endl;
                 } else {
                     std::cout << "The string is not polindrome." << std::endl;
+                }
+                break;
+            }
+            case 9: {
+                // Find substring into string
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, userInput);
+                std::string str = userInput;
+
+                std::cout << "Enter a subString: ";
+                std::getline(std::cin, userInput);
+                std::string subStr = userInput;
+
+                size_t index = findSubstring(str, subStr);
+                if (index == std::string::npos) {
+                    std::cout << "There isn't such substring into the string." << std::endl;
+                } else {
+                    std::cout << "The substring become at index: " << index << " of the string." << std::endl;
                 }
                 break;
             }
