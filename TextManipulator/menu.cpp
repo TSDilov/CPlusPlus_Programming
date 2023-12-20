@@ -18,9 +18,10 @@ void displayMenu() {
         std::cout << "7. Encrypt/Decrypt" << std::endl;
         std::cout << "8. Check Polindrome" << std::endl;
         std::cout << "9. Find for substring" << std::endl;
+        std::cout << "10. Replace substring" << std::endl;
         std::cout << "0. Exit" << std::endl;
 
-        std::cout << "Enter your choice (0-9): ";
+        std::cout << "Enter your choice (0-10): ";
         std::cin >> choice;
 
         std::cin.ignore();
@@ -127,6 +128,29 @@ void displayMenu() {
                     std::cout << "There isn't such substring into the string." << std::endl;
                 } else {
                     std::cout << "The substring become at index: " << index << " of the string." << std::endl;
+                }
+                break;
+            }
+            case 10: {
+                // Replace substring
+                std::cout << "Enter a string: ";
+                std::getline(std::cin, userInput);
+                std::string str = userInput;
+
+                std::cout << "Enter subString for replacement: ";
+                std::getline(std::cin, userInput);
+                std::string oldSubStr = userInput;
+
+                std::cout << "Enter the new subString: ";
+                std::getline(std::cin, userInput);
+                std::string newSubStr = userInput;
+
+                std::string result = replaceSubstring(str, oldSubStr, newSubStr);
+
+                if (result == str) {
+                    std::cout << "The substring to replace was not found in the original string." << std::endl;
+                } else {
+                    std::cout << "Modified String: " << result << std::endl;
                 }
                 break;
             }

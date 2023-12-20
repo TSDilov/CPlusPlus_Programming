@@ -89,3 +89,15 @@ size_t findSubstring(const std::string& str, const std::string& substr) {
 
     return std::string::npos;  
 }
+
+std::string replaceSubstring(const std::string& str, const std::string& oldSubStr, const std::string& newSubStr) {
+    std::string result = str;
+    size_t pos = result.find(oldSubStr);
+
+    while (pos != std::string::npos) {
+        result.replace(pos, oldSubStr.length(), newSubStr);
+        pos = result.find(oldSubStr, pos + newSubStr.length());
+    }
+
+    return result;
+}

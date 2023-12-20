@@ -19,4 +19,6 @@ bool isPalindrome(const std::string& str);
 
 size_t findSubstring(const std::string& str, const std::string& substr);
 
+std::string replaceSubstring(const std::string& str, const std::string& oldSubstr, const std::string& newSubstr);
+
 #endif
