@@ -1,28 +1,23 @@
 #pragma once
 
+#include "Game.h"
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
+#include "DrawBoard.h"
+#include "GameState.h"
 
 class Game {
-    public:
-        Game();
-        ~Game();
-        void Run();
-    
-    private:
-        bool gameOver;
-        const int width;
-        const int height;
-        int x, y, fruitX, fruitY, score;
-        int* tailX;
-        int* tailY;
-        int nTail;
-        enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
-        eDirection dir;
+public:
+    Game();
+    void Run();
 
-        void Setup();
-        void Draw();
-        void Input();
-        void Algorithm();
+private:
+    bool gameOver;
+    GameState gameState;
+    DrawBoard drawBoard;
+
+    void Setup();
+    void Input();
+    void Algorithm();
 };
