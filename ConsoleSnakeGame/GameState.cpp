@@ -13,7 +13,8 @@ GameState::~GameState() {
     tailY = nullptr;
 }
 
-void GameState::Setup() {
+void GameState::Setup() {  
+    gameOver = false;
     x = width / 2;
     y = height / 2;
     fruitX = rand() % width;

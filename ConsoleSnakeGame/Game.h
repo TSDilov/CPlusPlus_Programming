@@ -13,7 +13,6 @@ public:
     void Run();
 
 private:
-    bool gameOver;
     GameState gameState;
     DrawBoard drawBoard;
 

@@ -1,55 +1,7 @@
-#include "Game.h"
 #include "AlgorithmLogic.h"
+#include <cstdlib>
 
-using namespace std;
-
-Game::Game() : gameState(20, 10), drawBoard(gameState) {
-    Setup();
-}
-
-void Game::Run() {
-    while (!gameState.gameOver) {
-        DrawBoard drawBoard(gameState);
-        drawBoard.Draw();
-
-        Input();
-        AlgorithmLogic::Move(gameState);
-        Sleep(100);
-    }
-}
-
-void Game::Setup() {
-    gameState.Setup();
-}
-
-void Game::Input() {
-    if (_kbhit()) {
-        char keyPressed = _getch();
-        switch (keyPressed) {
-            case 'a':
-                if (gameState.dir != GameState::RIGHT) 
-                    gameState.dir = GameState::LEFT;
-                break;
-            case 'd':
-                if (gameState.dir != GameState::LEFT)  
-                    gameState.dir = GameState::RIGHT;
-                break;
-            case 'w':
-                if (gameState.dir != GameState::DOWN)  
-                    gameState.dir = GameState::UP;
-                break;
-            case 's':
-                if (gameState.dir != GameState::UP)   
-                    gameState.dir = GameState::DOWN;
-                break;
-            case 'x':
-                gameState.gameOver = true;
-                break;
-        }
-    }
-}
-
-void Game::Algorithm() {
+void AlgorithmLogic::Move(GameState& gameState) {
     int prevX = gameState.tailX[0];
     int prevY = gameState.tailY[0];
     int prev2X, prev2Y;

@@ -2,6 +2,7 @@
 
 class GameState {
 public:
+    bool gameOver;
     int width;
     int height;
     int x;
