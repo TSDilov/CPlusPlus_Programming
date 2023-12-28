@@ -44,9 +44,25 @@ void AlgorithmLogic::Move(GameState& gameState) {
     }
 
     if (gameState.x == gameState.fruitX && gameState.y == gameState.fruitY) {
+        GenerateRandomPosition(gameState, gameState.fruitX, gameState.fruitY);
         gameState.score += 10;
-        gameState.fruitX = rand() % gameState.width;
-        gameState.fruitY = rand() % gameState.height;
         gameState.nTail++;
+    }
+}
+
+void AlgorithmLogic::GenerateRandomPosition(GameState& gameState, int& x, int& y) {
+    bool validPosition = false;
+
+    while (!validPosition) {
+        x = rand() % gameState.width;
+        y = rand() % gameState.height;
+
+        validPosition = true;
+        for (int i = 0; i < gameState.nTail; i++) {
+            if (gameState.tailX[i] == x && gameState.tailY[i] == y) {
+                validPosition = false;
+                break;
+            }
+        }
     }
 }
