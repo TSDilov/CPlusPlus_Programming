@@ -18,5 +18,4 @@ private:
 
     void Setup();
     void Input();
-    void Algorithm();
 };
