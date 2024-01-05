@@ -10,6 +10,7 @@
 class Game {
 public:
     Game();
+    Game(int width, int height);
     void Run();
 
 private:

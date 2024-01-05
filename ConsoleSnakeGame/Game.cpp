@@ -8,9 +8,12 @@ Game::Game() : gameState(20, 10), drawBoard(gameState) {
     Setup();
 }
 
+Game::Game(int width, int height) : gameState(width, height), drawBoard(gameState) {
+    Setup();
+}
+
 void Game::Run() {
     while (!gameState.gameOver) {
-        DrawBoard drawBoard(gameState);
         drawBoard.Draw();
 
         Input();

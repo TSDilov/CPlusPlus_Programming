@@ -14,3 +14,13 @@ int StartMenu::ShowMenu() {
     std::cin >> choice;
     return choice;
 }
+
+std::pair<int, int> StartMenu::GetWidthAndHeight() {
+    int width;
+    int height;
+    std::cout << "Choose width for the field:" << std::endl;
+    std::cin >> width;
+    std::cout << "Choose height for the field:" << std::endl;
+    std::cin >> height;
+    return std::make_pair(width, height);
+}
